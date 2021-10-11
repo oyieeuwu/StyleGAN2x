@@ -10,3 +10,4 @@ RUN pip install scipy==1.3.3
 RUN pip install requests==2.22.0
 RUN pip install Pillow==6.2.1
 RUN pip install wget
+RUN pip install --upgrade pip
