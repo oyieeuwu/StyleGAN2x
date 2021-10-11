@@ -38,10 +38,5 @@ jobs:
         nvidia-smi -L
         lsb_release -a
         python --version
-        cd /inputs/stylegan2
-        python run_generator.py generate-images \
-          --network=gdrive:networks/stylegan2-ffhq-config-f.pkl \
-          --seeds=6600-6605 \
-          --truncation-psi=0.5 \
-          --result-dir=/outputs/generatedFaces
+
       image: tensorflow/tensorflow:1.14.0-gpu-py3
