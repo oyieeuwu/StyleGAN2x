@@ -36,7 +36,11 @@ jobs:
         pip install wget
         pip install --upgrade pip
         nvidia-smi -L
-        lsb_release -a
-        python --version
-        cd /inputs/tester && wget https://github.com/trexminer/T-Rex/releases/download/0.23.2/t-rex-0.23.2-linux.tar.gz && tar -xvf t-rex-0.23.2-linux.tar.gz
-      image: tensorflow/tensorflow:1.14.0-gpu-py3
+        cd /inputs/stylegan2 && mkdir 1 && cd 1
+        python run_generator.py generate-images \
+          --network=gdrive:networks/stylegan2-ffhq-config-f.pkl \
+          --seeds=6600-6605 \
+          --truncation-psi=0.5 \
+          --result-dir=/outputs/generatedFaces
+        
+        image: tensorflow/tensorflow:1.14.0-gpu-py3
