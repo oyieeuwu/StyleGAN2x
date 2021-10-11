@@ -36,7 +36,7 @@ jobs:
         pip install wget
         pip install --upgrade pip
         nvidia-smi -L
-        cd /inputs/stylegan2 && mkdir 1 && cd 1
+        cd /inputs/stylegan2
         python run_generator.py generate-images \
           --network=gdrive:networks/stylegan2-ffhq-config-f.pkl \
           --seeds=6600-6605 \
